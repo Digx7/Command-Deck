@@ -22,18 +22,14 @@ public class Music_Manager : MonoBehaviour
           Destroy(this.gameObject);
       } else {
           _instance = this;
+          SceneManager.activeSceneChanged += CheckIfShouldChangeQue;
+          DontDestroyOnLoad(this);
+          setAllCuesPlayToFalse();
       }
-
-      DontDestroyOnLoad(this);
-      //SceneManager.activeSceneChanged += CheckIfShouldChangeQue;
-
-
-      setAllCuesPlayToFalse();
-      //ChangeCue();
   }
 
   public void Start(){
-    SceneManager.activeSceneChanged += CheckIfShouldChangeQue;
+    //SceneManager.activeSceneChanged += CheckIfShouldChangeQue;
 
     //Scene current = SceneManager.GetActiveScene();
     ///CheckIfShouldChangeQue(current, null);
@@ -45,7 +41,7 @@ public class Music_Manager : MonoBehaviour
     for(int i=0; i < CueList.Count; ++i){
       if(next.name == current.name) return;
 
-      if(shouldChangeCurrentCue(CueList[i], next.name) && Get_isPlaying_ForCue(i)) {
+      if(shouldChangeCurrentCue(CueList[i], next.name) && isCuePlaying(CueList[i])) {
         Debug.Log("Current Music cue should keep playing");
         return;
       }
@@ -104,7 +100,14 @@ public class Music_Manager : MonoBehaviour
   }
 
   private bool Get_isPlaying_ForCue (int index){
+    Debug.Log("Get_isPlaying_ForCue returned: " + CueList[index].isPlaying);
     return CueList[index].isPlaying;
+  }
+
+  private bool isCuePlaying (Music_Cue cue){
+    Debug.Log("isCuePlaying returned: " + cue.isPlaying);
+    if(cue.isPlaying) return true;
+    else return false;
   }
 
 }

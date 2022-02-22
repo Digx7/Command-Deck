@@ -2747,10 +2747,19 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Team Lead: Everette
 
-        Background Artist: Kevin
+        Programming: Austin
+
+        Background
+        Artist: Kevin
+
+        Card Artist: Alex
+
+        Card Artist Andrew
 
         Composer:
         River
+
+        SFX: Kendrick
 
         Voice Actor: Alan
 
