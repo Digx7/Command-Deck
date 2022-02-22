@@ -6,7 +6,8 @@ public class NodeManager : MonoBehaviour
 {
 
     SpriteRenderer sr;
-    GenerateNodeList listUpdate;
+    MapManager map;
+    //public PlayerTracker tracker;
     Color neutral;
     Color hover;
     Color locked;
@@ -16,7 +17,8 @@ public class NodeManager : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        listUpdate = GetComponentInParent<GenerateNodeList>();
+        map = GetComponentInParent<MapManager>();
+        //tracker = GetComponent<PlayerTracker>();
         neutral = Color.white;
         hover = Color.yellow;
         locked = Color.gray;
@@ -50,6 +52,7 @@ public class NodeManager : MonoBehaviour
         playerOnNode = true;
         explored = true;
         sr.color = locked;
-        listUpdate.UpdateList();
+        map.UpdateList(this);
+        //tracker.SetPlayerLocation(this);
     }
 }
