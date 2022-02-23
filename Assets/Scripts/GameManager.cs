@@ -4,32 +4,47 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Player player1, player2;
-    public Store storeR, storeL;
+    public Player player;
 
-    public Player playerGoingFirst;
+    public void Start(){
+      startGame();
+    }
 
     public void startGame(){
-      player1.setUpLibrary();
-      player2.setUpLibrary();
-      storeR.setUpLibrary();
-      storeL.setUpLibrary();
-      storeR.Draw();
-      storeL.Draw();
-      player1.castChampion();
-      player2.castChampion();
+      //opening animations
+      //Indicate enemies first moves
+      player.setUpLibrary();
 
-      nextTurn(playerGoingFirst);
+      nextRound();
     }
 
-    public void nextTurn(Player activePlayer){
-      activePlayer.Draw();
-      activePlayer.RefillMana();
-      storeR.SetActivePlayer(activePlayer);
-      storeL.SetActivePlayer(activePlayer);
+    public void nextRound(){
+      player.Draw();
+      player.RefillMana();
     }
 
-    public void finishGame(){
-      Debug.Log("Game Finished");
+    public void endPlayerTurn(){
+      //Check game state
+      //if no one's dead continue
+
+      player.emptyMana();
+      player.DiscardAtTurnEnd();
+    }
+
+    public void enemyTurn(){
+      //Enemies take actions
+
+      //Check game state
+      //if no one's dead continue
+
+      nextRound();
+    }
+
+    public void PlayerWon(){
+      //Play win animations
+    }
+
+    public void PlayerLost(){
+      //Play lose animations
     }
 }
