@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Store : Player
 {
-    public Player activePlayer;
+    /*public Player activePlayer;
 
     public override void Draw(){
       Debug.Log("Store is Drawing");
@@ -34,5 +34,5 @@ public class Store : Player
 
     public void SetActivePlayer(Player player){
       activePlayer = player;
-    }
+    }*/
 }

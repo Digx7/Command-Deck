@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public Deck library, discardPile;
 
-    public int manaMax, manaCurrent, ultMax, ultCurrent, currentLife, maxLife, shopMod;
+    public int manaMax, manaCurrent, currentLife, maxLife, shopMod;
 
     public ChampionsScriptableObject playersChampion;
     public CardScriptableObject[] startingDeck;
@@ -28,9 +28,9 @@ public class Player : MonoBehaviour
       healthChanged.Invoke(currentLife);
     }
 
-    public void castChampion(){
+    /*public void castChampion(){
       playerFeild.addCardToFeild(playersChampion);
-    }
+    }*/
 
     public void shuffleDiscardPileBackIn(){
       int c = discardPile.Count();
@@ -89,22 +89,22 @@ public class Player : MonoBehaviour
       }
     }
 
-    public void BuyCard(CardScriptableObject card){
+    /*public void BuyCard(CardScriptableObject card){
       library.AddCardToBottom(card);
-    }
+    }*/
 
-    public void UpgradeUlt(int input){
+    /*public void UpgradeUlt(int input){
       ultCurrent += input;
       ultChanged.Invoke(ultCurrent);
 
       if(ultCurrent > ultMax) TriggerUlt();
-    }
+    }*/
 
-    public void TriggerUlt(){
+    /*public void TriggerUlt(){
       ultCurrent = 0;
       Debug.Log("The ultimate has triggered");
       playerFeild.checkAllCardsForTriggerType(TriggerType.UltimateTriggered);
-    }
+    }*/
 
     public void UpdateHealth(int input){
       currentLife += input;
@@ -116,10 +116,10 @@ public class Player : MonoBehaviour
       manaMax += input;
     }
 
-    public void UpdateShopCostMod(int input){
+    /*public void UpdateShopCostMod(int input){
       shopMod += input;
       shopModChanged.Invoke(shopMod);
-    }
+    }*/
 
     public void passTurn(){
       emptyMana();

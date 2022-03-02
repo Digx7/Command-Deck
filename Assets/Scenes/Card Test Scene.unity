@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicalCard: {fileID: 1509088667}
-  cardData: {fileID: 11400000, guid: b52ab8fce734f654c937e3bc2d51a2cd, type: 2}
+  cardData: {fileID: 11400000, guid: 013375c3d3f497f428c3f8334e6d20d4, type: 2}
 --- !u!4 &1122374588
 Transform:
   m_ObjectHideFlags: 0
@@ -260,10 +260,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1027428428189902056, guid: f884fe5c5f2abe641a1878656226bbd0, type: 3}
-      propertyPath: card
-      value: 
-      objectReference: {fileID: 11400000, guid: a9d26a5a57f80574e9074eeb7c88e1b7, type: 2}
     - target: {fileID: 7005581836366362734, guid: f884fe5c5f2abe641a1878656226bbd0, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -39,6 +39,7 @@ public class CardVisualizer : MonoBehaviour
       card = _card;
       nameText.text = card.CardName;
       costText.text = card.CardCost.ToString();
+      effectsText.text = card.cardText;
       flavorText.text = card.flavorText;
       cardImageRenderer.sprite = card.cardImage;
       cardBoarderRenderer.sprite = card.cardBoarder;

@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9155575416460128389}
   m_RootOrder: 0
@@ -161,6 +162,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6343365499895018091}
   m_RootOrder: 1
@@ -212,6 +214,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6014329991173253315}
   m_Father: {fileID: 6343365500548955643}
@@ -310,6 +313,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6343365500548955643}
   m_RootOrder: 0
@@ -353,6 +357,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 245622566644161485}
   - {fileID: 8229214482616594781}
@@ -407,6 +412,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6343365498907926553}
   - {fileID: 6343365500656787342}
@@ -432,21 +438,15 @@ MonoBehaviour:
   discardPile: {fileID: 6343365500656787343}
   manaMax: 500
   manaCurrent: 500
-  ultMax: 10
-  ultCurrent: 0
   currentLife: 3
   maxLife: 3
   shopMod: 0
   playersChampion: {fileID: 11400000, guid: 70edcd5582a74504b8300bfe5a033ee1, type: 2}
   startingDeck:
-  - {fileID: 11400000, guid: 7722b36f97d03104bbabbb7d7f51c7e4, type: 2}
-  - {fileID: 11400000, guid: e9160888eaec76c448fb964d5cb4c974, type: 2}
-  - {fileID: 11400000, guid: e9160888eaec76c448fb964d5cb4c974, type: 2}
-  - {fileID: 11400000, guid: d838889929ea1b140992d8d4ef8480aa, type: 2}
-  - {fileID: 11400000, guid: d838889929ea1b140992d8d4ef8480aa, type: 2}
-  - {fileID: 11400000, guid: 56f61bef9a3395b4ebdf8bfdbe9e5667, type: 2}
-  - {fileID: 11400000, guid: 063c83da929828f4aa6349033d93ceef, type: 2}
-  - {fileID: 11400000, guid: 2d894fa5e5efd474fad968b7d88e4e6a, type: 2}
+  - {fileID: 11400000, guid: 5ac276452a9d69d4f85f7354db7e89bd, type: 2}
+  - {fileID: 11400000, guid: ad6f58d67e212954db20620ab5e3617d, type: 2}
+  - {fileID: 11400000, guid: 5d98082b2f303944082e9e60d26d20eb, type: 2}
+  - {fileID: 11400000, guid: 013375c3d3f497f428c3f8334e6d20d4, type: 2}
   playerHand: {fileID: 8138790095621670851}
   handSize: 4
   playerFeild: {fileID: 6343365499895018092}
@@ -513,6 +513,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6343365500548955643}
   m_RootOrder: 1
@@ -556,6 +557,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6343365499895018091}
   m_RootOrder: 2
@@ -606,6 +608,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6343365500548955643}
   m_RootOrder: 3
@@ -669,6 +672,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6343365499895018091}
   m_RootOrder: 0

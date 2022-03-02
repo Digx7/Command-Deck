@@ -10,6 +10,8 @@ public class CardScriptableObject : ScriptableObject
 
   public int CardCost;
 
+  public string cardText;
+
   public string flavorText;
 
   public Sprite cardImage, cardBoarder;
@@ -17,5 +19,7 @@ public class CardScriptableObject : ScriptableObject
   public void printCard(){
     Debug.Log(CardName + " costs " + CardCost + " to play\n" + flavorText);
   }
+
+  public Trigger[] triggers;
 
 }

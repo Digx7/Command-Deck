@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0d7e5f18413b24d9a9a4ef234dac72, type: 3}
-  m_Name: Test Card
+  m_Script: {fileID: 11500000, guid: fd98bf6271e28fe41b26deab7f6e168e, type: 3}
+  m_Name: Damage 3
   m_EditorClassIdentifier: 
-  CardName: Test Dummy
-  CardCost: 12
-  cardText: 
-  flavorText: 
-  cardImage: {fileID: 0}
-  cardBoarder: {fileID: 0}
-  triggers: []
+  caster: {fileID: 0}
+  opponent: {fileID: 0}
+  damage: 3

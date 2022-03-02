@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc0d7e5f18413b24d9a9a4ef234dac72, type: 3}
-  m_Name: Test Card
+  m_Name: Defense Turret
   m_EditorClassIdentifier: 
-  CardName: Test Dummy
-  CardCost: 12
+  CardName: Defense Intercept
+  CardCost: 1
   cardText: 
   flavorText: 
   cardImage: {fileID: 0}
-  cardBoarder: {fileID: 0}
-  triggers: []
+  cardBoarder: {fileID: 21300000, guid: 0eea15a79466c2c48966c011c6257997, type: 3}
+  triggers:
+  - type: 0
+    property: {fileID: 11400000, guid: 2df0c402dc29fa84b8167796b0d067a8, type: 2}
