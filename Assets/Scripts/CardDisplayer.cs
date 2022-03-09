@@ -39,7 +39,7 @@ public class CardDisplayer : MonoBehaviour
     visuals.setOwner(owner);
     cardVisualizers.Add(visuals);
 
-    arrageDisplayCards();
+    //arrageDisplayCards();
   }
 
   public void arrageDisplayCards(){

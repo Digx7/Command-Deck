@@ -14,11 +14,11 @@ public class CardVisualizer : MonoBehaviour
     //public GameObject cardButtonOBJ;
     public Button cardButton;
 
-    public SpriteRenderer cardImageRenderer, cardBoarderRenderer;
+    public Image cardImageRenderer, cardBoarderRenderer;
 
     public Player ownerOfCard;
-    [SerializeField]
-    private Canvas cardCanvas;
+    //[SerializeField]
+    //private Canvas cardCanvas;
 
     [SerializeField]
     private Camera gameCamera;
@@ -26,7 +26,7 @@ public class CardVisualizer : MonoBehaviour
     public void Start(){
        gameCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
        //cardButton = cardButtonOBJ.GetComponent<Button>();
-       cardCanvas.worldCamera = gameCamera;
+       //cardCanvas.worldCamera = gameCamera;
 
        //cardButton.onClick.AddListener(() => testAction());
     }

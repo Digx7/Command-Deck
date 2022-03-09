@@ -135,56 +135,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &2682373576717568751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8229214482616594781}
-  - component: {fileID: 8583394356317126683}
-  m_Layer: 0
-  m_Name: EffectsDisplayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8229214482616594781
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682373576717568751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6343365499895018091}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8583394356317126683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682373576717568751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26acbf052059b344ba38845b504ca97b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardVisuals: []
-  cardVisualizers: []
-  cardBasePreFab: {fileID: 7005581836366362735, guid: f884fe5c5f2abe641a1878656226bbd0, type: 3}
-  cardDisplayStartingPoint: {x: 3, y: -1, z: 0}
-  cardDisplayOffset: {x: -1, y: 0, z: 0}
-  cardDisplayScale: {x: 0.25, y: 0.25, z: 0.25}
 --- !u!1 &5258998902560347239
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +310,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 245622566644161485}
-  - {fileID: 8229214482616594781}
-  - {fileID: 5870784085323049782}
   m_Father: {fileID: 6343365500548955643}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -377,12 +325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb1d3a0aa1c58e4e83016802544ee09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perminants: []
-  champions: []
-  effects: []
-  perminantsDispayer: {fileID: 8231394930705754051}
-  championsDisplayer: {fileID: 3309157996063672893}
-  effectsDisplayer: {fileID: 8583394356317126683}
+  cards: []
+  perminantsDispayer: {fileID: 0}
+  championsDisplayer: {fileID: 0}
+  effectsDisplayer: {fileID: 0}
+  cardDisplayer: {fileID: 3309157996063672893}
   caster: {fileID: 0}
   opponent: {fileID: 0}
 --- !u!1 &6343365500548955645
@@ -530,56 +477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5fedb389bcdf040b12d88dff1a75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7416116138264016894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5870784085323049782}
-  - component: {fileID: 8231394930705754051}
-  m_Layer: 0
-  m_Name: PerminatsDisplayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5870784085323049782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7416116138264016894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6343365499895018091}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8231394930705754051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7416116138264016894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26acbf052059b344ba38845b504ca97b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardVisuals: []
-  cardVisualizers: []
-  cardBasePreFab: {fileID: 7005581836366362735, guid: f884fe5c5f2abe641a1878656226bbd0, type: 3}
-  cardDisplayStartingPoint: {x: -5, y: -3, z: 0}
-  cardDisplayOffset: {x: 1, y: 0, z: 0}
-  cardDisplayScale: {x: 0.125, y: 0.125, z: 0.125}
 --- !u!1 &8669806772038690480
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +553,7 @@ GameObject:
   - component: {fileID: 245622566644161485}
   - component: {fileID: 3309157996063672893}
   m_Layer: 0
-  m_Name: ChampionDisplayer
+  m_Name: CardDisplayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,6 +589,6 @@ MonoBehaviour:
   cardVisuals: []
   cardVisualizers: []
   cardBasePreFab: {fileID: 7005581836366362735, guid: f884fe5c5f2abe641a1878656226bbd0, type: 3}
-  cardDisplayStartingPoint: {x: 1, y: -1, z: 0}
-  cardDisplayOffset: {x: 0, y: 0, z: 0}
+  cardDisplayStartingPoint: {x: -8, y: -1, z: 0}
+  cardDisplayOffset: {x: 2, y: 0, z: 0}
   cardDisplayScale: {x: 0.25, y: 0.25, z: 0.25}
