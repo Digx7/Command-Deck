@@ -7,6 +7,7 @@ public class NodeManager : MonoBehaviour
 
     SpriteRenderer sr;
     MapManager map;
+    FindNextNode nodeFinder;
     //public PlayerTracker tracker;
     Color neutral;
     Color hover;
@@ -18,6 +19,7 @@ public class NodeManager : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         map = GetComponentInParent<MapManager>();
+        nodeFinder = GetComponent<FindNextNode>();
         //tracker = GetComponent<PlayerTracker>();
         neutral = Color.white;
         hover = Color.yellow;
