@@ -6,11 +6,13 @@ public class MapManager : MonoBehaviour
 {
 
     public NodeManager[] nodeList;
+    public MapCol[] ColList;
     public NodeManager playerLocation;
 
     private void Awake()
     {
         nodeList = GetComponentsInChildren<NodeManager>();
+        ColList = GetComponentsInChildren<MapCol>();
         //Debug.Log("Node List Generated");
     }
 
@@ -30,7 +32,7 @@ public class MapManager : MonoBehaviour
             {
                 playerLocation = node;
                 node.enabled = false;
-                Debug.Log("Start Node Found");
+                //Debug.Log("Start Node Found");
                 break;
             }
         }

@@ -7,9 +7,11 @@ public class NodeManager : MonoBehaviour
 
     SpriteRenderer sr;
     MapManager map;
-    FindNextNode nodeFinder;
+    MapCol column;
+    //FindNextNode nodeFinder;
     //public PlayerTracker tracker;
-    Color neutral;
+    public Color neutral;
+    public string nodeType;
     Color hover;
     Color locked;
     bool explored;
@@ -19,11 +21,16 @@ public class NodeManager : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         map = GetComponentInParent<MapManager>();
-        nodeFinder = GetComponent<FindNextNode>();
+        column = GetComponentInParent<MapCol>();
+        //nodeFinder = GetComponent<FindNextNode>();
         //tracker = GetComponent<PlayerTracker>();
-        neutral = Color.white;
+        //neutral = Color.white;
         hover = Color.yellow;
         locked = Color.gray;
+    }
+    private void Start()
+    {
+        sr.color = neutral;
     }
 
     private void OnMouseEnter()
