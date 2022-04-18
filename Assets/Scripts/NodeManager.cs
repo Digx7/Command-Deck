@@ -15,7 +15,7 @@ public class NodeManager : MonoBehaviour
     Color hover;
     Color locked;
     bool explored;
-    bool playerOnNode;
+    bool hovering;
 
     private void Awake()
     {
@@ -28,9 +28,12 @@ public class NodeManager : MonoBehaviour
         hover = Color.yellow;
         locked = Color.gray;
     }
-    private void Start()
+    private void Update()
     {
-        sr.color = neutral;
+        if (!explored && !hovering)
+        {
+            sr.color = neutral;
+        }
     }
 
     private void OnMouseEnter()
@@ -38,6 +41,7 @@ public class NodeManager : MonoBehaviour
         if (!explored)
         {
             sr.color = hover;
+            hovering = true;
         }
     }
 
@@ -46,6 +50,7 @@ public class NodeManager : MonoBehaviour
         if (!explored)
         {
             sr.color = neutral;
+            hovering = false;
         }
     }
 
@@ -58,7 +63,7 @@ public class NodeManager : MonoBehaviour
         }
 
         //Debug.Log("Travelling to node " + this.name);
-        playerOnNode = true;
+        //playerOnNode = true;
         explored = true;
         sr.color = locked;
         map.UpdateList(this);
