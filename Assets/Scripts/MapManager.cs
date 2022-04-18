@@ -36,14 +36,43 @@ public class MapManager : MonoBehaviour
                 break;
             }
         }
+
+        for(int i = 1; i < ColList.Length; i++)
+        {
+            ColList[i].DisableCol();
+        }
     }
 
     public void UpdateList(NodeManager node)
     {
         nodeList = GetComponentsInChildren<NodeManager>();
-        Debug.Log("Node List Updated");
+        //Debug.Log("Node List Updated");
         playerLocation = node;
     }
 
+    public void MoveCols(int index)
+    {
+        if(index + 1 < ColList.Length)
+        {
+            ColList[index].DisableCol();
+            ColList[index + 1].EnableCol();
+        }
+        else
+        {
+            Debug.Log("Boss Node Reached");
+        }
+    }
+
+    public int GetColIndex(MapCol col)
+    {
+        for(int i = 0; i < ColList.Length; i++)
+        {
+            if(ColList[i].tag == col.tag)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
 
 }

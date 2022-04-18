@@ -7,6 +7,7 @@ public class MapCol : MonoBehaviour
 
     public NodeManager[] nodesInCol;
     MapManager map;
+    public int index;
 
     private void Awake()
     {
@@ -38,9 +39,19 @@ public class MapCol : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisableCol()
     {
-        
+        foreach (NodeManager node in nodesInCol)
+        {
+            node.DisableNode();
+        }
+    }
+
+    public void EnableCol()
+    {
+        foreach(NodeManager node in nodesInCol)
+        {
+            node.EnableNode();
+        }
     }
 }

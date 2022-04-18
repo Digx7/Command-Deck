@@ -6,12 +6,14 @@ public class NodeManager : MonoBehaviour
 {
 
     SpriteRenderer sr;
+    LineRenderer lr;
     MapManager map;
     MapCol column;
     //FindNextNode nodeFinder;
     //public PlayerTracker tracker;
     public Color neutral;
     public string nodeType;
+    public NodeManager[] connections;
     Color hover;
     Color locked;
     bool explored;
@@ -25,14 +27,26 @@ public class NodeManager : MonoBehaviour
         //nodeFinder = GetComponent<FindNextNode>();
         //tracker = GetComponent<PlayerTracker>();
         //neutral = Color.white;
+        lr = GetComponent<LineRenderer>();
         hover = Color.yellow;
         locked = Color.gray;
+    }
+
+    private void Start()
+    {
+        lr.positionCount = 2; ;
     }
     private void Update()
     {
         if (!explored && !hovering)
         {
             sr.color = neutral;
+        }
+
+        if (this.tag == "Start Node")
+        {
+            lr.SetPosition(0, this.transform.position);
+            lr.SetPosition(1, connections[0].transform.position);
         }
     }
 
@@ -62,11 +76,27 @@ public class NodeManager : MonoBehaviour
             return;
         }
 
+        column.DisableCol();
+        map.UpdateList(this);
+        map.MoveCols(column.index);
+
         //Debug.Log("Travelling to node " + this.name);
         //playerOnNode = true;
+        //explored = true;
+        //sr.color = locked;
+        //map.UpdateList(this);
+        //tracker.SetPlayerLocation(this);
+    }
+
+    public void DisableNode()
+    {
         explored = true;
         sr.color = locked;
-        map.UpdateList(this);
-        //tracker.SetPlayerLocation(this);
+    }
+
+    public void EnableNode()
+    {
+        explored = false;
+        sr.color = neutral;
     }
 }
