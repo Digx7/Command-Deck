@@ -39,7 +39,7 @@ public class MapManager : MonoBehaviour
 
         for(int i = 1; i < ColList.Length; i++)
         {
-            ColList[i].DisableCol();
+            ColList[i].PreviewCol();
         }
     }
 

@@ -18,6 +18,7 @@ public class NodeManager : MonoBehaviour
     Color locked;
     bool explored;
     bool hovering;
+    public bool access;
 
     private void Awake()
     {
@@ -32,27 +33,17 @@ public class NodeManager : MonoBehaviour
         locked = Color.gray;
     }
 
-    private void Start()
-    {
-        lr.positionCount = 2; ;
-    }
     private void Update()
     {
-        if (!explored && !hovering)
+        if ((!explored && !hovering) || (!access&& !hovering))
         {
             sr.color = neutral;
-        }
-
-        if (this.tag == "Start Node")
-        {
-            lr.SetPosition(0, this.transform.position);
-            lr.SetPosition(1, connections[0].transform.position);
         }
     }
 
     private void OnMouseEnter()
     {
-        if (!explored)
+        if (!explored && access)
         {
             sr.color = hover;
             hovering = true;
@@ -61,7 +52,7 @@ public class NodeManager : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (!explored)
+        if (!explored && access)
         {
             sr.color = neutral;
             hovering = false;
@@ -76,9 +67,13 @@ public class NodeManager : MonoBehaviour
             return;
         }
 
-        column.DisableCol();
-        map.UpdateList(this);
-        map.MoveCols(column.index);
+        if (access)
+        {
+            column.DisableCol();
+            map.UpdateList(this);
+            map.MoveCols(column.index);
+        }
+        
 
         //Debug.Log("Travelling to node " + this.name);
         //playerOnNode = true;
@@ -86,6 +81,12 @@ public class NodeManager : MonoBehaviour
         //sr.color = locked;
         //map.UpdateList(this);
         //tracker.SetPlayerLocation(this);
+    }
+
+    public void PreviewNode()
+    {
+        access = false;
+        sr.color = neutral;
     }
 
     public void DisableNode()
@@ -96,6 +97,7 @@ public class NodeManager : MonoBehaviour
 
     public void EnableNode()
     {
+        access = true;
         explored = false;
         sr.color = neutral;
     }

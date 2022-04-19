@@ -39,6 +39,14 @@ public class MapCol : MonoBehaviour
         }
     }
 
+    public void PreviewCol()
+    {
+        foreach(NodeManager node in nodesInCol)
+        {
+            node.PreviewNode();
+        }
+    }
+
     public void DisableCol()
     {
         foreach (NodeManager node in nodesInCol)
