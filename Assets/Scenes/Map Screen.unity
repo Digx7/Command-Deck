@@ -1736,9 +1736,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785cacd4d646efc48905712a69081a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  lr: {fileID: 0}
+  map: {fileID: 0}
+  column: {fileID: 0}
   neutral: {r: 0.19887187, g: 0.8113208, b: 0.09490919, a: 0}
   nodeType: 
   connections: []
+  hover: {r: 0, g: 0, b: 0, a: 0}
+  locked: {r: 0, g: 0, b: 0, a: 0}
+  explored: 0
+  hovering: 0
   access: 0
 --- !u!114 &618044588
 MonoBehaviour:
@@ -2389,6 +2397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesInCol: []
+  map: {fileID: 0}
   index: 5
 --- !u!1 &904715068 stripped
 GameObject:
@@ -2450,6 +2459,9 @@ MonoBehaviour:
   nodeList: []
   ColList: []
   playerLocation: {fileID: 0}
+  battleScene: 
+  shopScene: 
+  repairScene: 
 --- !u!1001 &1257313758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3244,6 +3256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesInCol: []
+  map: {fileID: 0}
   index: 0
 --- !u!1001 &1546132254
 PrefabInstance:
@@ -3969,6 +3982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesInCol: []
+  map: {fileID: 0}
   index: 2
 --- !u!1 &1857806820
 GameObject:
@@ -4018,6 +4032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesInCol: []
+  map: {fileID: 0}
   index: 1
 --- !u!1 &1858618168
 GameObject:
@@ -4067,6 +4082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesInCol: []
+  map: {fileID: 0}
   index: 3
 --- !u!1 &1917878942
 GameObject:
@@ -4492,6 +4508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesInCol: []
+  map: {fileID: 0}
   index: 4
 --- !u!4 &2066525023 stripped
 Transform:

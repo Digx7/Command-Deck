@@ -6,7 +6,7 @@ public class MapCol : MonoBehaviour
 {
 
     public NodeManager[] nodesInCol;
-    MapManager map;
+    [SerializeField] MapManager map;
     public int index;
 
     private void Awake()

@@ -5,19 +5,19 @@ using UnityEngine;
 public class NodeManager : MonoBehaviour
 {
 
-    SpriteRenderer sr;
-    LineRenderer lr;
-    MapManager map;
-    MapCol column;
+    [SerializeField] SpriteRenderer sr;
+    [SerializeField] LineRenderer lr;
+    [SerializeField] MapManager map;
+    [SerializeField] MapCol column;
     //FindNextNode nodeFinder;
     //public PlayerTracker tracker;
     public Color neutral;
     public string nodeType;
     public NodeManager[] connections;
-    Color hover;
-    Color locked;
-    bool explored;
-    bool hovering;
+    public Color hover;
+    public Color locked;
+    [SerializeField] bool explored;
+    [SerializeField] bool hovering;
     public bool access;
 
     private void Awake()
@@ -72,6 +72,7 @@ public class NodeManager : MonoBehaviour
             column.DisableCol();
             map.UpdateList(this);
             map.MoveCols(column.index);
+            map.ChangeScene(nodeType);
         }
         
 
