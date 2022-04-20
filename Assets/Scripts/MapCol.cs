@@ -1,0 +1,65 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MapCol : MonoBehaviour
+{
+
+    public NodeManager[] nodesInCol;
+    [SerializeField] MapManager map;
+    public int index;
+
+    private void Awake()
+    {
+        nodesInCol = GetComponentsInChildren<NodeManager>();
+        map = GetComponentInParent<MapManager>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        foreach(NodeManager node in nodesInCol)
+        {
+            int type = Random.Range(0, 9);
+            if(type < 5)
+            {
+                node.neutral = Color.white;
+                node.nodeType = "Battle";
+            }
+            else if(type == 5 || type == 6)
+            {
+                node.neutral = Color.blue;
+                node.nodeType = "Shop";
+            }
+            else if (type == 7 || type == 8)
+            {
+                node.neutral = Color.magenta;
+                node.nodeType = "Shipyard";
+            }
+        }
+    }
+
+    public void PreviewCol()
+    {
+        foreach(NodeManager node in nodesInCol)
+        {
+            node.PreviewNode();
+        }
+    }
+
+    public void DisableCol()
+    {
+        foreach (NodeManager node in nodesInCol)
+        {
+            node.DisableNode();
+        }
+    }
+
+    public void EnableCol()
+    {
+        foreach(NodeManager node in nodesInCol)
+        {
+            node.EnableNode();
+        }
+    }
+}
