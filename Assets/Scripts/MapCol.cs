@@ -21,17 +21,17 @@ public class MapCol : MonoBehaviour
         foreach(NodeManager node in nodesInCol)
         {
             int type = Random.Range(0, 9);
-            if(type < 6)
+            if(type < 5)
             {
                 node.neutral = Color.white;
                 node.nodeType = "Battle";
             }
-            else if(type == 6 || type == 7)
+            else if(type == 5 || type == 6)
             {
                 node.neutral = Color.blue;
                 node.nodeType = "Shop";
             }
-            else if (type == 8)
+            else if (type == 7 || type == 8)
             {
                 node.neutral = Color.magenta;
                 node.nodeType = "Shipyard";

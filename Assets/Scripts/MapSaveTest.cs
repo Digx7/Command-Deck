@@ -11,12 +11,12 @@ public class MapSaveTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            MapSaveManager.Save(map);
+            map.SaveMap();
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            map = MapSaveManager.Load();
+            map.LoadMap();
         }
     }
 }

@@ -72,6 +72,7 @@ public class NodeManager : MonoBehaviour
             column.DisableCol();
             map.UpdateList(this);
             map.MoveCols(column.index);
+            map.SaveMap();
             map.ChangeScene(nodeType);
         }
         

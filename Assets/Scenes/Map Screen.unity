@@ -2456,6 +2456,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a600b61c0bd1b124da3eb41d9342e255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    nodeList: []
+    ColList: []
+    playerLocation: {fileID: 0}
   nodeList: []
   ColList: []
   playerLocation: {fileID: 0}

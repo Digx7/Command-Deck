@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[System.Serializable]
 public class MapManager : MonoBehaviour
 {
-
+    public MapData data;
     public NodeManager[] nodeList;
     public MapCol[] ColList;
     public NodeManager playerLocation;
@@ -16,36 +15,52 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
-         nodeList = GetComponentsInChildren<NodeManager>();
-         ColList = GetComponentsInChildren<MapCol>();
-         //Debug.Log("Node List Generated");
+        if (!PlayerPrefs.HasKey("Map"))
+        {
+            nodeList = GetComponentsInChildren<NodeManager>();
+            ColList = GetComponentsInChildren<MapCol>();
+            //Debug.Log("Node List Generated");
+        }
+        else
+        {
+            LoadMap();
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        /*if (Input.GetKeyDown("space"))
         {
             Debug.Log("Player is at " + playerLocation);
-        }
+        }*/
     }
 
     private void Start()
     {
-         foreach (NodeManager node in nodeList)
-         {
-             if (node.tag.Equals("Start Node"))
-             {
-                 playerLocation = node;
-                 node.enabled = false;
-                 //Debug.Log("Start Node Found");
-                 break;
-             }
-         }
+        if (!PlayerPrefs.HasKey("Map"))
+        {
+            //Find Start Node
+            foreach (NodeManager node in nodeList)
+            {
+                if (node.tag.Equals("Start Node"))
+                {
+                    playerLocation = node;
+                    node.enabled = false;
+                    //Debug.Log("Start Node Found");
+                    break;
+                }
+            }
 
-         for (int i = 1; i < ColList.Length; i++)
-         {
-             ColList[i].PreviewCol();
-         }
+            //Make rows in front of player visible but inactive
+            for (int i = 1; i < ColList.Length; i++)
+            {
+                ColList[i].PreviewCol();
+            }
+        }
+        // Store this map's data into a MapData object
+        data.nodeList = nodeList;
+        data.ColList = ColList;
+        data.playerLocation = playerLocation;
     }
 
     public void UpdateList(NodeManager node)
@@ -101,5 +116,20 @@ public class MapManager : MonoBehaviour
         }
     }
 
+    public void SaveMap()
+    {
+        data.nodeList = nodeList;
+        data.ColList = ColList;
+        data.playerLocation = playerLocation;
+        MapSaveManager.Save(data);
+    }
+
+    public void LoadMap()
+    {
+        MapData loadedMap = MapSaveManager.Load();
+        ColList = loadedMap.ColList;
+        nodeList = loadedMap.nodeList;
+        playerLocation = loadedMap.playerLocation;
+    }
     
 }
